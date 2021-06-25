@@ -1,0 +1,29 @@
+.btn {
+	border: none;
+	outline: none;
+
+	background: #835afd;
+	color: #fff;
+
+	border-radius: 0.5rem;
+	height: 3rem;
+	padding: 0 2rem;
+
+	font-weight: 500;
+	font: 40 16px "Roboto", sans-serif;
+
+	cursor: pointer;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	transition: filter 0.2s;
+	&:not(:disabled):hover {
+		filter: brightness(0.9);
+	}
+	&:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+}
