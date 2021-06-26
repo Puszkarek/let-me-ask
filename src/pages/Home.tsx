@@ -15,6 +15,7 @@ export function Home() {
 	const { user, signInWithGoogle } = useAuth();
 
 	const [roomCode, setRoomCode] = useState("");
+
 	async function handleCreateRoom() {
 		if (!user) await signInWithGoogle();
 
@@ -30,6 +31,10 @@ export function Home() {
 			alert("Essa sala não existe!");
 			return;
 		}
+		if (roomRef.val()?.endedAt) {
+			alert("Essa sala ja foi encerrada!");
+			return;
+		}
 		history.push(path);
 	}
 	return (
@@ -40,26 +45,37 @@ export function Home() {
 					src={illustrationImg}
 					alt='Ilustração simbolizando perguntas e respostas'
 				/>
-				<strong>Crie salas de perguntas em tempo real</strong>
-				<p>Tire as dúvidas de sua audiência</p>
+				<strong className='aside-title'>
+					Crie salas de perguntas em tempo real
+				</strong>
+				<p className='aside-description'>
+					Tire as dúvidas de sua audiência
+				</p>
 			</aside>
-			<main className='main-container'>
-				<div className='main-content'>
+			<main className='home-main-container'>
+				<div className='home-main-content'>
 					<img src={logoImg} alt='LetMeAsk' className='logo' />
-					<Button
-						onClick={handleCreateRoom}
-						className='btn btn-create-room'
-					>
-						<img
-							className='btn-image'
-							src={googleIconImg}
-							alt='Logo do Google'
-						/>
-						Crie sua sala com o Google
-					</Button>
-
+					{!user ? (
+						<Button
+							onClick={handleCreateRoom}
+							className='btn btn-create-room'
+						>
+							<img
+								className='btn-image'
+								src={googleIconImg}
+								alt='Logo do Google'
+							/>
+							Crie sua sala com o Google
+						</Button>
+					) : (
+						<Button
+							onClick={handleCreateRoom}
+							className='btn btn-create-room'
+						>
+							Crie uma nova sala
+						</Button>
+					)}
 					<div className='separator'>ou entre em uma sala</div>
-
 					<form onSubmit={handleJoinRoom}>
 						<input
 							type='text'

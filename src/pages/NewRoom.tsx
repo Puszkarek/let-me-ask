@@ -22,7 +22,8 @@ export function NewRoom() {
 			title: newRoom,
 			authorId: user?.id,
 		});
-		history.push(`/rooms/${firebaseRoom.key}`);
+		const roomKey = firebaseRoom.key;
+		history.push(`/admin/rooms/${roomKey}`);
 	}
 	return (
 		<div id='page-auth' className='page-auth'>
@@ -32,16 +33,21 @@ export function NewRoom() {
 					src={illustrationImg}
 					alt='Ilustração simbolizando perguntas e respostas'
 				/>
-				<strong>Crie salas de perguntas em tempo real</strong>
-				<p>Tire as dúvidas de sua audiência</p>
+
+				<strong className='aside-title'>
+					Crie salas de perguntas em tempo real
+				</strong>
+				<p className='aside-description'>
+					Tire as dúvidas de sua audiência
+				</p>
 			</aside>
-			<main className='main-container'>
-				<div className='main-content'>
+			<main className='home-main-container'>
+				<div className='home-main-content'>
 					<img src={logoImg} alt='LetMeAsk' className='logo' />
 
-					<h2>Criar nova sala</h2>
 					<form onSubmit={handleCreateRoom}>
 						<input
+							className='input-home'
 							type='text'
 							placeholder='Nome da sala'
 							onChange={(event) => setNewRoom(event.target.value)}
@@ -49,7 +55,7 @@ export function NewRoom() {
 						/>
 						<Button type='submit'>Entrar na Sala</Button>
 					</form>
-					<p>
+					<p className='description-form'>
 						Quer entrar em uma sala existente?{" "}
 						<Link to='/'>Clique Aqui</Link>
 					</p>

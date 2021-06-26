@@ -16,9 +16,23 @@ h2 {
 	margin: 4rem 0 1.5rem;
 	font-family: "Poppins", sans-serif;
 }
-a {
-	color: #e559f9;
+.page-warning-invalid {
+	font-family: "Poppins", sans-serif;
+	.page-warning-text {
+		text-align: center;
+		font-size: 4rem;
+		color: #29292e;
+
+		width: 50%;
+		margin: 4rem auto;
+	}
+	.btn-warning {
+		margin: auto;
+		height: 6rem;
+		font-size: 3rem;
+	}
 }
+
 .separator {
 	$color: #a8a8a8;
 	font-size: 14px;
@@ -40,5 +54,28 @@ a {
 		height: 1px;
 		background: $color;
 		margin-left: 16px;
+	}
+}
+.link {
+	background: none;
+	border: 0;
+	color: #835afd;
+	font-size: 1em;
+	text-decoration: underline;
+	cursor: pointer;
+}
+a {
+	color: #e559f9;
+}
+
+button,
+a {
+	transition: filter 0.2s;
+	&:not(:disabled):hover {
+		filter: brightness(0.9);
+	}
+	&:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
 	}
 }

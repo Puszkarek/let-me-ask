@@ -1,0 +1,65 @@
+@mixin question {
+	.question-container {
+		background: #fefefe;
+		border-radius: 0.5rem;
+		box-shadow: 0 0.1rem 0.7rem rgba(0, 0, 0, 0.04);
+		padding: 2rem;
+
+		margin-bottom: 0.5rem;
+	}
+	.question-content {
+		color: #29292e;
+	}
+}
+@mixin question-user {
+	.question-user-name {
+		margin-left: 0.5rem;
+		color: #737380;
+		font-size: 0.9rem;
+	}
+	.question-user-container,
+	.question-user-info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+@mixin question-buttons {
+	.btn-icon {
+		border: 0;
+		background: none;
+		cursor: pointer;
+		&:not(:disabled):hover {
+			filter: opacity(0.7);
+		}
+	}
+	.btn-like {
+		display: flex;
+		align-items: flex-end;
+		color: #737380;
+		gap: 5%;
+	}
+	.btn-liked {
+		color: #e559f9;
+		.like-icon-path {
+			stroke: #e559f9;
+		}
+	}
+}
+
+@mixin question-state {
+	.question-answer {
+		background: #dbdcdd;
+	}
+	.question-highlighted {
+		background-color: #f4f0ff;
+		border: 1px solid #835afd;
+	}
+	.question-user-highlight {
+		color: #29292e;
+	}
+}
+@include question;
+@include question-user;
+@include question-buttons;
+@include question-state;
