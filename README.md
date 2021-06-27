@@ -3,11 +3,14 @@
 <p align="center">
 <img src="./src/assets/images/logo.svg">
 </p>
+
 Create and manager your question room easily.
-## 💻  Build With
-- [React.js](https://reactjs.org/ "React")
-- [Firebase](https://firebase.google.com/ "Firebase")
-- [TypeScript](https://www.typescriptlang.org/ "TypeScript")
+
+## 💻 Build With
+
+-   [React.js](https://reactjs.org/ "React")
+-   [Firebase](https://firebase.google.com/ "Firebase")
+-   [TypeScript](https://www.typescriptlang.org/ "TypeScript")
 
 ## 🚀 Features
 
