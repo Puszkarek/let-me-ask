@@ -1,0 +1,46 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "standard",
+        "prettier",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "prettier",
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "@typescript-eslint/no-explicit-any": "off",
+        // suppress errors for missing 'import React' in files
+        "react/react-in-jsx-scope": "off",
+        // allow jsx syntax in js files (for next.js project)
+        "react/jsx-filename-extension": [1, {
+            "extensions": [".ts", ".tsx"]
+        }],
+        "semi": "off",
+        "react/prop-types": "off",
+        "no-use-before-define": "off",
+        "linebreak-style": 0,
+        "quotes": ["error", "double"],
+        "no-plusplus": 0,
+        "no-console": "off",
+        "import/extensions": [0, {
+            "js": "always"
+        }],
+        "prettier/prettier": "error"
+    }
+}

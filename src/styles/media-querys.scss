@@ -1,0 +1,7 @@
+@media (max-width: 920px) {
+	@include auth-media-medium;
+}
+
+@media (max-width: 768px) {
+	@include auth-media-small;
+}

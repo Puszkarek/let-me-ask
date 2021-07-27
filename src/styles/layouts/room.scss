@@ -1,4 +1,8 @@
-@mixin header-container {
+@mixin room-header {
+	.header-container {
+		padding: 1.5rem;
+		border-bottom: 1px solid #e2e2e2;
+	}
 	.header-content {
 		max-width: 70rem;
 		margin: 0 auto;
@@ -15,7 +19,12 @@
 		gap: 5%;
 	}
 }
+
 @mixin room {
+	.room-container {
+		max-width: 50rem;
+		margin: 0 auto;
+	}
 	.room-label {
 		margin: 2rem 0 1.4rem;
 		display: flex;
@@ -38,6 +47,24 @@
 		font-size: 0.8rem;
 	}
 }
+
+@mixin room-props {
+	.room-textarea {
+		box-sizing: border-box;
+		width: 100%;
+		border: 0;
+		padding: 1rem;
+		border-radius: 0.5rem;
+		background-color: #fefefe;
+		box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+		resize: vertical;
+		min-height: 130px;
+	}
+	.question-list {
+		margin: 2rem 0;
+	}
+}
+
 @mixin user {
 	.user-info-container {
 		display: flex;
@@ -55,18 +82,8 @@
 		font-size: 0.9rem;
 	}
 }
-@mixin form {
-	textarea {
-		box-sizing: border-box;
-		width: 100%;
-		border: 0;
-		padding: 1rem;
-		border-radius: 0.5rem;
-		background-color: #fefefe;
-		box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-		resize: vertical;
-		min-height: 130px;
-	}
+
+@mixin room-form {
 	.form-footer {
 		display: flex;
 		justify-content: space-between;
@@ -78,19 +95,10 @@
 		color: #737380;
 		font-weight: 500;
 	}
-	@include user;
 }
-.header-container {
-	padding: 1.5rem;
-	border-bottom: 1px solid #e2e2e2;
-	@include header-container;
-}
-.room-container {
-	max-width: 50rem;
-	margin: 0 auto;
-	@include room;
-	@include form;
-}
-.question-list {
-	margin: 2rem 0;
-}
+
+@include room-header;
+@include room;
+@include room-props;
+@include room-form;
+@include user;

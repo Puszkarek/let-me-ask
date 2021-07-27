@@ -1,21 +1,21 @@
 import copyIcon from "../assets/images/copy.svg";
 
-import "../styles/components/room-code.scss";
-
 type RoomCodeProps = {
-	code: string;
+  code: string;
 };
 
-export function RoomCode(props: RoomCodeProps) {
-	function copyCodeToClipboard() {
-		navigator.clipboard.writeText(props.code);
-	}
-	return (
-		<button onClick={copyCodeToClipboard} className='btn-room-code'>
-			<div className='btn-room-code-icon-container'>
-				<img src={copyIcon} alt='Copy room code' />
-			</div>
-			<span className='btn-room-code-text'> Sala #{props.code}</span>
-		</button>
-	);
+export function RoomCode(props: RoomCodeProps): JSX.Element {
+  function copyCodeToClipboard() {
+    navigator.clipboard.writeText(props.code);
+  }
+  return (
+    <button onClick={copyCodeToClipboard} className="copy-area-container">
+      <div className="copy-area-content">
+        <span className="copy-area-icon">
+          <img src={copyIcon} alt="Copy room code" />
+        </span>
+        <span className="copy-area-url">{props.code}</span>
+      </div>
+    </button>
+  );
 }

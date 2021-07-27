@@ -1,3 +1,11 @@
+@import "./components/question.scss";
+@import "./components/button.scss";
+@import "./components/room-code.scss";
+
+@import "./layouts/auth.scss";
+@import "./layouts/room.scss";
+
+@import "./media-querys.scss";
 body {
 	margin: 0;
 	padding: 0;
@@ -32,7 +40,6 @@ h2 {
 		font-size: 3rem;
 	}
 }
-
 .separator {
 	$color: #a8a8a8;
 	font-size: 14px;
@@ -56,6 +63,7 @@ h2 {
 		margin-left: 16px;
 	}
 }
+
 .link {
 	background: none;
 	border: 0;
@@ -72,7 +80,7 @@ button,
 a {
 	transition: filter 0.2s;
 	&:not(:disabled):hover {
-		filter: brightness(0.9);
+		filter: opacity(0.7);
 	}
 	&:disabled {
 		opacity: 0.6;

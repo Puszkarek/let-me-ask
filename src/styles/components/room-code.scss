@@ -1,30 +1,54 @@
-.btn-room-code {
-	padding: 0;
-	height: 2rem;
-	border-radius: 0.5rem;
-	overflow: hidden;
-	background: #fff;
-	background: #fff;
-	border: 1px solid #835afd;
-	cursor: pointer;
-	display: flex;
-	align-items: stretch;
+@mixin room-code {
+	.copy-area-container {
+		outline: none;
+		border: none;
+		margin: 1rem;
+		background: none;
+
+		height: 2rem;
+		line-height: 2rem;
+
+		cursor: pointer;
+	}
+
+	.copy-area-content {
+		background-color: #fff;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border-radius: 0.5rem;
+
+		display: flex;
+		flex-direction: row-reverse;
+
+		align-items: stretch;
+		justify-content: stretch;
+
+		overflow: hidden;
+		box-shadow: inset 0 0 0 1px #835afd;
+	}
+	.copy-area-icon {
+		background: #835afd;
+		color: #fff;
+
+		padding: 0 0.8rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		z-index: 1;
+	}
+	.copy-area-url {
+		padding: 0 1rem 0 0.8rem;
+		min-width: 5rem;
+		max-width: 10rem;
+
+		font-size: 0.9em;
+		font-weight: 500;
+
+		flex: 1;
+
+		white-space: nowrap;
+	}
 }
-.btn-room-code-icon-container {
-	background: #835afd;
-	padding: 0 0.8rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.btn-room-code-text {
-	display: block;
-	align-self: center;
-	flex: 1;
-	padding: 0 1rem 0 0.8rem;
-	min-width: 5rem;
-	max-width: 10rem;
-	font-size: 0.9rem;
-	font-weight: 500;
-	white-space: nowrap;
-}
+@include room-code;
