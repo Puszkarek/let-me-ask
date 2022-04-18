@@ -26,7 +26,7 @@ Create and manager your question room easily.
 
 ```
     > git clone https://github.com/Puszkarek/let-me-ask.git
-    > cd whatsapp-bot
+    > cd let-me-ask
 ```
 
 #### Install depencencies and run:
